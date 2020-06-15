@@ -27,4 +27,9 @@ public class TimeInterceptor {
         return callable.call();
     }
 
+    public void printPara(String para)
+    {
+        System.out.println(para);
+    }
+
 }
