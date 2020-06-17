@@ -19,7 +19,7 @@ public class Agent {
 
     public static void premain(String agentArgs, Instrumentation inst) throws UnmodifiableClassException {
         LinkedList<Class> retransformClasses = new LinkedList<Class>();
-        List<ClassFileTransformer> classFileTransformers = Arrays.asList(new TestTransformer(), new PatternTransformer());
+        List<ClassFileTransformer> classFileTransformers = Arrays.asList(/*new TestTransformer(),*/ new PatternTransformer());
         for (ClassFileTransformer classFileTransformer : classFileTransformers)
             inst.addTransformer(classFileTransformer, true);
         Class[] loadedClasses = inst.getAllLoadedClasses();
@@ -34,33 +34,6 @@ public class Agent {
         if (classes.length > 0) {
             inst.retransformClasses(classes);
         }
-//        new RedosPatternInstaller().install(inst);
-//
-//        Thread thread = new Thread() {
-//            public void run() {
-//                System.out.println("Thread Running");
-//                try {
-//                    Thread.currentThread().sleep(10000);
-//
-//                    Class c[] = inst.getAllLoadedClasses();
-//                    for (int i = 0; i < c.length; i++) {
-//                        String clsName = c[i].getName();
-//
-//                        System.out.println(clsName);
-////                        if (clsName.equals("com.github.shehanperera.example.Method")) {
-//
-//                            inst.retransformClasses(c[i]);
-////                        }
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                    System.out.println(e);
-//                }
-//
-//            }
-//        };
-//
-//        thread.start();
     }
 
     public static void initTransform(Instrumentation instrumentation) {

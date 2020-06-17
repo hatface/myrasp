@@ -9,9 +9,9 @@ public class Main {
         String regex = "1[38]\\d{9}";//定义手机好规则
         boolean flag = s.matches(regex);//判断功能
 
-        String content = "I am noob from runoob.com";
-        String pattern = ".*runoob.*";
-        boolean isMatch = Pattern.matches(pattern, content);
+        Pattern pattern = Pattern.compile(".*.*.*abc");
+        pattern.split("xxxabc");
+
         System.out.println("flag:" + flag);
     }
 }
