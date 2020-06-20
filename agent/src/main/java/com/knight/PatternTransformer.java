@@ -84,7 +84,8 @@ public class PatternTransformer implements ClassFileTransformer {
                         ctBehavior.insertBefore(
                                 "if (!regexPatterns.contains($1.pattern().pattern())){\n" +
                                         "regexPatterns.add($1.pattern().pattern());\n" +
-                                        "java.io.FileWriter fileWriter = new java.io.FileWriter(new java.io.File(\"/tmp/123.txt\"), true);\n" +
+//                                        "System.out.println($1.pattern().pattern() + \" from \" + \""+ tmpClassName +"\" );" +
+                                        "java.io.FileWriter fileWriter = new java.io.FileWriter(new java.io.File(\"D://123.txt\"), true);\n" +
                                         "fileWriter.append($1.pattern().pattern()+\"\\n\");\n" +
                                         "fileWriter.flush();\n" +
                                         "fileWriter.close();\n" +
