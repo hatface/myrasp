@@ -68,6 +68,7 @@ public class PatternTransformer implements ClassFileTransformer {
     public byte[] transform(ClassLoader loader, String className,
                             Class<?> classBeingRedefined, ProtectionDomain protectionDomain,
                             byte[] classfileBuffer) throws IllegalClassFormatException {
+//        System.out.println(className);
         if (className.startsWith("java/util/regex/Pattern$")) {
             String tmpClassName = className.replace("java/util/regex/Pattern$", "");
             if (!nameSet.contains(tmpClassName)) {
@@ -85,7 +86,9 @@ public class PatternTransformer implements ClassFileTransformer {
                                 "if (!regexPatterns.contains($1.pattern().pattern())){\n" +
                                         "regexPatterns.add($1.pattern().pattern());\n" +
 //                                        "System.out.println($1.pattern().pattern() + \" from \" + \""+ tmpClassName +"\" );" +
-                                        "java.io.FileWriter fileWriter = new java.io.FileWriter(new java.io.File(\"D://123.txt\"), true);\n" +
+//                                        "new java.lang.Throwable().printStackTrace();\n"+
+                                        "new com.knight.TestPrint().myPrintString();\n"+
+                                        "java.io.FileWriter fileWriter = new java.io.FileWriter(new java.io.File(\"/Users/kongzhen/workspace/myrasp/123.txt\"), true);\n" +
                                         "fileWriter.append($1.pattern().pattern()+\"\\n\");\n" +
                                         "fileWriter.flush();\n" +
                                         "fileWriter.close();\n" +
@@ -98,6 +101,7 @@ public class PatternTransformer implements ClassFileTransformer {
                 return classfileBuffer;
             }
         } else
-            return classfileBuffer;
+            return null;
     }
+
 }

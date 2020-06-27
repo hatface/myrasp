@@ -6,9 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="agentlib" />
+        <module name="rasp-boot" />
         <module name="agent" />
+        <module name="rasp-engine" />
+        <module name="myrasp-web" />
         <module name="sheeptest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boot" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="myrasp-web" options="-parameters" />
+    </option>
   </component>
 </project>
