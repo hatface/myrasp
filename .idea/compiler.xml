@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="agentlib" />
-        <module name="rasp-boot" />
         <module name="agent" />
-        <module name="rasp-engine" />
+        <module name="agentlib" />
         <module name="myrasp-web" />
+        <module name="rasp-boot" />
+        <module name="rasp-engine" />
         <module name="sheeptest" />
       </profile>
     </annotationProcessing>

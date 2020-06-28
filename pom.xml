@@ -11,7 +11,7 @@
     <modules>
         <module>agent</module>
         <module>sheeptest</module>
-        <module>agentlib</module>
+        <!--<module>agentlib</module>-->
         <module>boot</module>
         <module>engine</module>
         <module>myrasp-web</module>
