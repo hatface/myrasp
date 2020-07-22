@@ -1,16 +1,6 @@
 %YAML 1.2
 ---
 
-#===============================================================================
-#                     IAST Default Hook Definition
-# -----------------------------------------------------------------------------
-# Author    shiyan s00383986
-# Date:        2019-10-15
-# Copyright:   Security Tool Dev Department / Cloud & AI /
-#                 Huawei Technologies Co., Ltd.
-#===============================================================================
-
-
 # ------------------------------container hook--------------------------------
 AsyncJettyContextChanger:
   desc: "async jetty hook"
